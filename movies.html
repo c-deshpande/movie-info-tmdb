@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Display Movie Information</title>
+  <meta charset="utf-8" />
+  <script type="text/javascript" src="movies.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      background-color: #1f2833;
+      font-family: 'Montserrat', sans-serif;
+      position: relative;
+      min-height: 100vh;
+    }
+
+    main {
+      display: flex;
+      color: white;
+      flex-grow: 1;
+    }
+
+    content {
+      flex-basis: 75%;
+      background-color: #151c23;
+      flex-grow: 1;
+      align-items: center;
+    }
+
+    sidebar {
+      flex-basis: 25%;
+      background-color: #1f2833;
+      flex-grow: 1;
+      min-height: 0;
+      position: relative;
+      order: -1;
+      padding: 10px;
+    }
+
+    a {
+      color: #FFF;
+      font-weight: bold;
+    }
+
+    button {
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      background-color: #4b525b;
+      padding: 5px;
+      cursor: pointer;
+      color: white;
+      border: none;
+    }
+
+    #search-results {
+      position: absolute; 
+      padding:10px; 
+      top: 0; 
+      bottom: 0; 
+      left: 0; 
+      right: 0;
+      overflow: auto;
+    }
+
+    #map {
+      height: 100vh; 
+      margin: auto;
+    }
+
+    @media all and (max-width: 640px) {
+      main {
+        flex-direction: column;
+        flex-grow: 1;
+      }
+
+      sidebar {
+        flex-basis: 60%;
+      }
+
+      content {
+        flex-basis: 40%;
+        order: -1;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+
+<body onload="initialize();">
+  <main>
+    <sidebar>
+      <div class="split-left left" id="search-results">
+        <form style="margin: 0 auto;">
+          <label>Movie title: <input type="text" id="form-input" /></label>
+          <input type="button" onclick="sendRequest();" value="Display Info" />
+        </form>
+        <div class="centered" id="results">
+        </div>
+      </div>
+    </sidebar>
+    <content>
+      <div id="movieDetails" style="align-items: center; margin: auto;">
+        <img src="" width="200px" height="300px" id="moviePoster" style="display: block; margin: auto; margin-top: 15%;">
+        <div style="padding: 0% 20% 0% 20%;">
+          <h1 id="movieTitle" style="text-align:center"></h1>
+          <p id="movieGenres" style="text-align:center"></p>
+          <p id="movieOverview" style="text-align: justify;"></p>
+          <p id="top5cast" style="text-align:center"></p>
+        </div>
+      </div>
+    </content>
+  </main>
+</body>
+</html>
