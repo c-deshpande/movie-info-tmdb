@@ -3,7 +3,7 @@ An application which displays movie information.
 
 Project done as a part of CSE-5335 Web Data Management Course at UTA.
 
-Demo of the project can be found <a href="https://movie-info-tmdb.herokuapp.com/">Here</a>.
+Demo of the project can be found <a href="https://movie-info-tmdb.herokuapp.com/" target="_blank">Here</a>.
 
 The problem statement is as follows:
 
